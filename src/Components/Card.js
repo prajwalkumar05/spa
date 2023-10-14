@@ -23,14 +23,18 @@ const Card = (props) => {
     return (
         <div className="card">
             <img src={props.item.img} alt="Animal" />
+            <div className="card-holder">
             <span>{props.item.name}</span>
-            <select onChange={(e)=>setOption(e.target.value)}>
+                    <span>Label:<select onChange={(e) => setOption(e.target.value)}>
                 {data.map((item, i) => {
                     return <option className="classifer">{ item.label}</option>
                 })}
-            </select>
+            </select></span>
+            <div className="buttons">
             <button onClick={()=>setLabel(props.id)}>Set Label</button>
-            <button onClick={()=>removeLabel(props.id)}>Remove Label</button>
+                    <button onClick={() => removeLabel(props.id)}>Remove Label</button>
+                    </div>
+                </div>
         </div>
     );
 }
