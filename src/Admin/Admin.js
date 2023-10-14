@@ -13,13 +13,17 @@ const Admin = () => {
     console.log(data)
     return (
         <div className="admin-container">
+            <div>
+                <h2>AVAILABLE LABELS</h2>
+            </div>
             <div className="input">
+                
             <input onChange={(e)=>setLabel(e.target.value)} type="text" name="newlabel"/>
                 <button onClick={submit}>Add New Label</button>
             </div>
 
             <div className="label-container">
-                {data.map((item, i) => {
+               {data.map((item, i) => {
                     return <span className="classifer">{ item.label}</span>
                 })}
                
