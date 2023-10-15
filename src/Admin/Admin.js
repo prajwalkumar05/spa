@@ -34,6 +34,7 @@ const Admin = ({userRole}) => {
     }
 
     console.log(data)
+<<<<<<< HEAD
     if(userRole === 'admin'){
         return (
             <div className="admin-container">
@@ -54,6 +55,27 @@ const Admin = ({userRole}) => {
          );
     }
    
+=======
+    return (
+        <div className="admin-container">
+            <div>
+                <h2>AVAILABLE LABELS</h2>
+            </div>
+            <div className="input">
+                
+            <input onChange={(e)=>setLabel(e.target.value)} type="text" name="newlabel"/>
+                <button onClick={submit}>Add New Label</button>
+            </div>
+
+            <div className="label-container">
+               {data.map((item, i) => {
+                    return <span className="classifer">{ item.label}</span>
+                })}
+               
+            </div>
+        </div>
+    );
+>>>>>>> f43d92319c13877b5d82d4c8e992c50328c81a7a
 }
 
 export default Admin
