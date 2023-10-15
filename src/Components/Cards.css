@@ -7,14 +7,12 @@
 }
 
 .cards-container {
-    height: 100vh;
+    height: 100%;
     background-color: rgba(160, 96, 96, 0.8);
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 0px 80px;
     gap: 20px;
     align-items: center;
     justify-content: center;
-
 }

@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import './Card.css';
 import { useDataContext } from "../Hooks/useDataContext";
-import { Dropdown } from "bootstrap";
+
 
 
 const Card = (props) => {
-    const { data, setData } = useDataContext()
+    const [ data, setData ] = useState();
     const [admin, setAdmin] = useState(false)
     const [option, setOption] = useState()
+
+
+  
     const setLabel = (i) => {
    const result = props.allcards.map((pre) => pre.id===i ? {...pre,name:option}: pre )
         props.setAllCards(result);
@@ -20,12 +23,19 @@ const Card = (props) => {
         props.setAllCards(result);
     }
 
+    useEffect(() => {
+        const items = JSON.parse(localStorage.getItem('items'));
+        if (items) {
+            setData(items);
+        }
+      }, []);
+
     return (
         <div className="card">
             <img src={props.item.img} alt="Animal" />
             <span>{props.item.name}</span>
             <select onChange={(e)=>setOption(e.target.value)}>
-                {data.map((item, i) => {
+                {data && data.map((item, i) => {
                     return <option className="classifer">{ item.label}</option>
                 })}
             </select>
