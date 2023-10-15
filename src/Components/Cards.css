@@ -10,11 +10,14 @@
 }
 
 .cards-container {
+<<<<<<< HEAD
+    height: 100%;
+=======
+>>>>>>> f43d92319c13877b5d82d4c8e992c50328c81a7a
     background-color: rgba(160, 96, 96, 0.8);
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     align-items: center;
     justify-content: center;
-
 }

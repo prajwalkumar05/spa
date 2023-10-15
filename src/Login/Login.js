@@ -1,13 +1,25 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import './Login.css';
 
-const Login = () => {
+const Login = ({ setUserRole }) => {
+
+    const navigate = useNavigate()
+
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     
     const submit = () => {
         console.log(username);
         console.log(password);
+        if (username === 'admin' && password === 'admin') {
+            setUserRole('admin');
+            navigate('/admin');
+          } else {
+            setUserRole('user');
+            navigate('/cards');
+          }
+          
     }
     return (
         <div className="login-container">
